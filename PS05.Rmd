@@ -99,7 +99,7 @@ For our EDA, we looked at the distribution of count, and how the timestamp and w
 
 By observing the histogram below, we can see that the our variable 'count' is highly right skewed. 
 
-```{r}
+```{r, echo=FALSE}
 ggplot(train,aes(x=count)) + 
   geom_histogram() +
 labs( y ="number of count(frequency) ", x = "count(units)",title="Distribution of demand")  + theme(axis.text=element_text(size=15),
@@ -114,7 +114,7 @@ We first looked at the distribution of bike rental demand throughout the day.We 
 ggplot(train,aes(x=hour,y=count))+
   stat_smooth() +
   geom_point(x=train$hour,color="black") +
-labs( x = "24 hour format)",
+labs( x = "24 hour format",
     y = "count(units)",title="Demand of bikes by hours")  + theme(axis.text=element_text(size=15),
         axis.title=element_text(size=15),
         legend.text=element_text(size = 15) , 
